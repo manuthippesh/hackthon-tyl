@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Book Appointments</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<style type="text/css">
+		td{
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	  <div class="container-fluid">
+	    <a class="navbar-brand" href="#">iMediCare</a>
+	    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	      <span class="navbar-toggler-icon"></span>
+	    </button>
+	    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	      <ul class="navbar-nav d-flex ms-auto mb-2 mb-lg-1">
+	        <li class="nav-item">
+	          <a class="nav-link active" aria-current="page" href="#">Update Details</a>
+	        </li>
+	        <li class="nav-item">
+	          <a class="nav-link active" aria-current="page" href="#">History</a>
+	        </li>
+	        <li class="nav-item">
+	          <button type="button" class="btn btn-outline-danger">Logout</button>
+	        </li>
+	      </ul>
+	    </div>
+	  </div>
+	</nav>
+
+	<div class="container">
+		<div class="box">
+			<p class="display-2 justify-content-center">Book Your Appointment</p>
+			<div class="row gx-5">
+				<div class="col-12 col-lg-6 col-md-6 self-align-start ">
+                        <form method="POST" action="book_appointment">{% csrf_token %}
+							<br>
+							<h2>Search for Doctors</h2>
+								
+                                <select class="form-select" aria-label="Default select example" name="consultant">
+                                    <option selected>Choose your Consultant</option>
+                                    {%for id,spcl in val %}
+                                  
+                                      <option value={{id}}>{{spcl}}</option>
+
+                                  {% endfor %}
+                              </select>
+								<br>
+							<h2>Choose Your Mode</h2>
+								<select class="form-select" aria-label="Default select example" name="mode">
+							  		<option selected>Choose your Mode</option>
+							  		<option value="1">Online</option>
+									<option value="0">Offline</option>
+								</select>
+								<br>
+							<div class="d-grid col-7 mx-auto gap-2">
+  								<button class="btn btn-primary" type="submit">Submit</button>
+							</div>
+						</form>
+						<br>
+				</div>
+				<div class="col-12 col-lg-6 col-md-6 self-align-end">
+						<table class="table table-striped">
+					  <thead class="table-dark">
+					    <tr>
+					      <th scope="col">Name</th>
+                          
+                          <th scope="col">Specialisation</th>
+                          <th scope="col">Time</th>
+					      <th scope="col">Book Appointment</th>
+					    </tr>
+					  </thead>
+					  <!-- <tbody>
+					    <tr>
+					      <th scope="row">1</th>
+					      <td>	Prashanth</td>
+					      <td>Available</td>
+                          <td>Available</td>
+					    
+					      <td><button type="submit" class="btn btn-primary btn-sm">Book Appointment</button></td>
+					    </tr>
+					   
+					    </tr>
+					  </tbody> -->
+                      <tbody>
+						{%for id,name,sp,time in auxi %}
+						<form method="POST" action="b_appointment">{% csrf_token %}
+							<tr>
+							  
+							  <td><input type="text" name="d_name" value={{name}} autocomplete="off"  ></td>
+							  <td><input type="text" name="sp" value={{sp}} autocomplete="off"  ></td>
+							  <td><input type="text" name="time" value={{time}} autocomplete="off"  ></td>
+							  
+	
+	
+							  <td><input type="submit" class="btn btn-primary btn-sm" value="Book Appointment"></td>
+							</tr>
+						</form>
+						{% endfor %}
+					    
+					  </tbody>
+					</table>
+						
+				
+					
+					
+				</div>
+				
+			</div>
+
+			
+		</div>
+	</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,233 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<title>Patient DashBoard</title>
+	<style type="text/css">
+		@media (max-width: 576px) 
+		{
+			.carousel-item
+			{
+				height:200px ;
+			}
+		}
+		@media (min-width: 768px) 
+		{
+			.carousel-item
+			{
+				height:400px ;
+			}
+		}
+		
+		.img-card{
+			height: 280px;
+		}
+		/*.card{
+			background-color: gray;
+			color: black;
+			font-weight: 200%;
+		}*/
+		.card-text{
+			font-size: 32px;
+		}
+		.card-title{
+			font-size: 38px;
+		}
+	</style>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	  <div class="container-fluid">
+	    <a class="navbar-brand" href="a_register">iMediCare</a>
+	    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	      <span class="navbar-toggler-icon"></span>
+	    </button>
+	    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	      <ul class="navbar-nav d-flex ms-auto mb-2 mb-lg-1">
+	        <!-- <li class="nav-item">
+	          <a class="nav-link active" aria-current="page" href="#">Login/Signup</a>
+	        </li>
+	        <li class="nav-item">
+	          <a class="nav-link active" aria-current="page" href="#">History</a>
+	        </li>
+	        <!-- <li class="nav-item">  -->
+             <li class="nav-item me-2">
+	          <a type="button" class="btn btn-outline-success" href="register">Login/SignUp</a>
+              </li>
+              <li class="nav-item me-2">
+              <a type="button" class="btn btn-outline-success" href="d_register">Doctor Login</a>
+              </li>
+             
+	      </ul>
+	    </div>
+	  </div>
+	</nav>
+
+	<div class="container-fluid">
+		<hr>
+		<div class="display-2 d-flex justify-content-center">Welcome to iMediCare!</div>
+		<hr>
+				<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  		<div class="carousel-inner">
+    		<div class="carousel-item">
+      		<img src="{% static 'images/banner4.jpg' %}" class="d-block w-100 first" alt="...">
+      		
+    		</div>
+    		<div class="carousel-item active">
+      		<img src="{% static 'images/banner8.jpg'%}" class="d-block w-100" alt="...">
+      		<div class="carousel-caption d-none d-md-block text-danger">
+        			<h1>Health Care Made Easy</h1>
+        				<p>One Stop Shop for your health Needs</p>
+      			</div>
+    		</div>
+    		<div class="carousel-item">
+      		<img src="{% static 'images/banner7.jpg'%}" class="d-block w-100" alt="...">
+      		<div class="carousel-caption d-none d-md-block text-danger">
+        			<h1>Order Medicine!</h1>
+        				<p>Order all your prescribed Medicine with a click</p>
+      			</div>
+    		</div>
+  		</div>
+  		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    		<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    		<span class="visually-hidden">Previous</span>
+  		</button>
+  		<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    		<span class="carousel-control-next-icon" aria-hidden="true"></span>
+    		<span class="visually-hidden">Next</span>
+  		</button>
+		</div>
+		<hr>
+		<div class="row mx-4">
+  <div class="col-12 col-md-6 col-lg-12">
+  	<div class="card mb-3">
+  <div class="row g-0">
+    <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
+      <img src="{%static 'images/rep_icon.png' %}" class="img-fluid rounded-start img-card" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title mb-4">Download Your Reports!</h5>
+        <br>
+        <p class="card-text ">Our Application Allows you to easily Download And save your Medical and Other Reports Easily With A single Click</p>
+      </div>
+    </div>
+  </div>
+</div>
+    <!-- <div class="card">
+      <div class="card-body">
+      	<img src="images/rep_icon.png" class="img-card " alt="...">
+        <h5 class="card-title text-center">Download your Reports!</h5>
+        <p class="card-text text-center">Easily Download and Save all your medical Reports</p>
+        <a href="#" class="btn btn-primary d-flex justify-content-center">Download Now!</a>
+      </div>
+    </div> -->
+  </div>
+  <div class="col-12 col-md-6 col-lg-12 ">
+  	<div class="card mb-3">
+  <div class="row g-0">
+    <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
+      <img src="{% static 'images/buy_med.png' %}" class="img-fluid rounded-start img-card" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title mb-4">Order Medicine!</h5>
+        <p class="card-text">Have Your essential And Prescribed Medicines delivered to your doorstep with ease</p>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+  <div class="col-12 col-md-6 col-lg-12">
+  	<div class="card mb-3">
+  <div class="row g-0">
+    <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
+      <img src="{% static 'images/BookAp.png' %}" class="img-fluid rounded-start img-card" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title mb-4">Book Appoiontments</h5>
+        <p class="card-text ">Easily Book Appointments with Leading Doctors</p>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+</div>
+
+<hr>
+<div class="container">
+<h1 style="background-color: #3A9BDC; color: white;" class="d-flex justify-content-center">FAQ</h1>
+</div>
+<hr>
+
+<div class="container">
+
+	<div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        What is iMediCare?
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse " aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>iMedicare is a Dynamic Health Management Application.</strong> iMediCare Allows Easily and Hassle Free Managemnets of patients and Doctors. Making the Work of the organisation Easier And Less Time Consuming.      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        Who Can Use iMediCare?
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>iMediCare can Be use dby both patients and Doctors.</strong> Patients Are able to get all their needs such as appointments with doctors,Refilling of their prescriptions, View and Downloading their reports with little effort.
+        Doctors are able to schedule their appointments and manage their patients in a smooth Manner      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        How do I order my medications through iMediCare?
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>Medicatons can be ordered through the iMedicare Shop.</strong>Patients can choose the medication they require in the the volume they require and Have it delivered to their doorstep.      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingFour">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour"  aria-controls="collapseOne">
+        Can I have A video Consultation?
+      </button>
+    </h2>
+    <div id="collapseFour" class="accordion-collapse collapse " aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>Yes, Video Consultation is an option.</strong> Patients Can choose to have their consultation online depending on the doctors availability.      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingFive">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="true" aria-controls="collapseOne">
+        hello
+      </button>
+    </h2>
+    <div id="collapseFive" class="accordion-collapse collapse  mb-4" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

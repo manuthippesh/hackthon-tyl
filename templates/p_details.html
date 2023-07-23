@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<title>Patient DashBoard</title>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	  <div class="container-fluid">
+		<a class="navbar-brand" href="#">iMediCare</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		  <span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		  <ul class="navbar-nav d-flex ms-auto mb-2 mb-lg-1">
+			<li class="nav-item">
+			  <a class="nav-link active" aria-current="page" href="#">Update Details</a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link active" aria-current="page" href="#">History</a>
+			</li>
+			<li class="nav-item">
+			  <button type="button" class="btn btn-outline-danger">Logout</button>
+			</li>
+		  </ul>
+		</div>
+	  </div>
+	</nav>
+    <form method="POST" action="p_details">{% csrf_token %}
+
+        <div class="container">
+            <div class="d-flex display-4 justify-content-center"> Please Enter your Details</div>
+            <hr>
+            <div class="box mx-lg-5 rounded-3">
+                <div class="mb-3 row">
+                    <div class="col-7 mx-auto mb-3">
+                        <label for="formGroupExampleInput" class="form-label">Full Name</label>
+                        <input type="text" name="name" class="form-control" id="formGroupExampleInput" placeholder="Enter Your Fullname">
+                    </div>
+                    <div class="col-7 mx-auto mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Phone</label>
+                        <input type="digit" name="contact_no" class="form-control" id="formGroupExampleInput2" placeholder="Enter Your Phone Number">
+                    </div>
+                    <div class="col-7 mx-auto mb-3">
+                        <label for="formGroupExampleInput" class="form-label">Age</label>
+                        <input type="text" name="age" class="form-control" id="formGroupExampleInput" placeholder="Enter Your Age">
+                    </div>
+                    <div class="col-7 mx-auto mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Date Of Birth</label>
+                        <input type="date" name="dob" class="form-control" id="formGroupExampleInput2" placeholder="DD/MM/YYYY">
+                    </div>
+                    <div class="col-7 mx-auto mb-3">
+                        <label for="formGroupExampleInput" class="form-label">Email</label>
+                        <input type="Email" name="email" class="form-control" id="formGroupExampleInput" placeholder="Enter Your Email">
+                    </div>
+                    <div class="col-7 mx-auto mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Gender</label>
+                        <input type="text" name="gender" class="form-control" id="formGroupExampleInput2" placeholder="Enter Your Address">
+                    </div>
+                    <div class="col-7 mx-auto mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Address</label>
+                        <input type="text" name="address" class="form-control" id="formGroupExampleInput2" placeholder="Enter Your Address">
+                    </div>
+                </div>
+            </div>
+            <div class="d-grid col-7 mx-auto gap-2">
+                <button class="btn btn-success" type="submit">Submit</button>
+            </div>
+	    </div>
+    </form>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

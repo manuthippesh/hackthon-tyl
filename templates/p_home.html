@@ -1,0 +1,195 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<title>Patient DashBoard</title>
+	<style type="text/css">
+		@media (max-width: 576px) 
+		{
+			.carousel-item
+			{
+				height:200px ;
+			}
+		}
+		@media (min-width: 768px) 
+		{
+			.carousel-item
+			{
+				height:400px ;
+			}
+		}
+		
+		.img-card{
+			height: 250px;
+		}
+		/*.card{
+			background-color: black;
+			color: white;
+		}*/
+	</style>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	  <div class="container-fluid">
+	    <a class="navbar-brand" href="#">iMediCare</a>
+	    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	      <span class="navbar-toggler-icon"></span>
+	    </button>
+	    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	      <ul class="navbar-nav d-flex ms-auto mb-2 mb-lg-1">
+			<li class="nav-item">
+				<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+						Emergency
+					  </button>
+						  <!-- Modal -->
+						  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+							<div class="modal-dialog">
+							  <div class="modal-content">
+								<div class="modal-header">
+								  <h5 class="modal-title" id="exampleModalLabel">Emergency Numbers</h5>
+								  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+								</div>
+								<div class="modal-body">
+									  <table class="table">
+			  <tbody>
+				<tr>
+				  <td style="font-weight: 600;">Old Airport Road - Bengaluru</td>
+				  <td><a href="tel:080-22221111">080-22221111</a></td>
+				</tr>
+				<tr>
+				  <td style="font-weight: 600;">Whitefield - Bengaluru</td>
+				  <td><a href="tel:080-22221111">080-22221111</a></td>
+				</tr>
+				<tr>
+				  <td style="font-weight: 600;">MH Clinic - Brookefield - Bengaluru</td>
+				  <td><a href="tel:080-4009 1234">080-4009 1234</a></td>
+				</tr>
+				<tr>
+				  <td style="font-weight: 600;">Jayanagar - Bengaluru</td>
+				  <td><a href="tel:080-4009 1234">080-4009 1234</a></td>
+				</tr>
+				<tr>
+				  <td style="font-weight: 600;">Malleshwaram - Bengaluru</td>
+				  <td><a href="tel:08045004600">08045004600</a></td>
+				</tr>
+				<tr>
+				  <td style="font-weight: 600;">Doddaballapur - Bengaluru</td>
+				  <td><a href="tel:18001025555">18001025555</a></td>
+				</tr>
+				<tr>
+				  <td style="font-weight: 600;">Varthur Road, Whitefield - Bengaluru</td>
+				  <td><a href="tel:080-4009 1234">080-4009 1234</a></td>
+				</tr>
+				<tr>
+				  <td style="font-weight: 600;">Sarjapur Road - Bengaluru</td>
+				  <td><a href="tel:080-22221111">080-22221111</a></td>
+				</tr>
+				<tr>
+				  <td style="font-weight: 600;">Hebbal - Bengaluru</td>
+				  <td><a href="tel:18001025555">18001025555</a></td>
+				</tr>
+
+			  </tbody>
+			</table>
+								</div>
+							  </div>
+							</div>
+						  </div>
+			</li>
+	        <li class="nav-item">
+	          <a class="nav-link active" aria-current="page" href="p_details">Update Details</a>
+	        </li>
+	        <li class="nav-item">
+	          <a class="nav-link active" aria-current="page" href="#">History</a>
+	        </li>
+	        <li class="nav-item">
+	          <button type="button" class="btn btn-outline-danger">LogOut</button>
+	        </li>
+	      </ul>
+	    </div>
+	  </div>
+	</nav>
+
+	<div class="container-fluid">
+		<hr>
+		<div class="display-2 d-flex justify-content-center">Welcome to iMediCare!</div>
+		<hr>
+				<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  		<div class="carousel-inner">
+    		<div class="carousel-item">
+      		<img src="{%static 'images/banner4.jpg' %}" class="d-block w-100 first" alt="...">
+      		
+    		</div>
+    		<div class="carousel-item active">
+      		<img src="{%static 'images/banner8.jpg' %}" class="d-block w-100" alt="...">
+      		<div class="carousel-caption d-none d-md-block text-danger">
+        			<h1>Health Care Made Easy</h1>
+        				<p>One Stop Shop for your health Needs</p>
+      			</div>
+    		</div>
+    		<div class="carousel-item">
+      		<img src="{% static 'images/banner7.jpg' %}" class="d-block w-100" alt="...">
+      		<div class="carousel-caption d-none d-md-block text-danger">
+        			<h1>Order Medicine!</h1>
+        				<p>Order all your prescribed Medicine with a click</p>
+      			</div>
+    		</div>
+  		</div>
+  		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    		<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    		<span class="visually-hidden">Previous</span>
+  		</button>
+  		<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    		<span class="carousel-control-next-icon" aria-hidden="true"></span>
+    		<span class="visually-hidden">Next</span>
+  		</button>
+		</div>
+		<hr>
+		<div class="row mb-4">
+  <div class="col-12 col-md-6 col-lg-3">
+    <div class="card">
+      <div class="card-body">
+      	<img src="{% static 'images/rep_icon.png' %}" class="img-card " alt="...">
+        <h5 class="card-title text-center">Download your Reports!</h5>
+        <p class="card-text text-center">Easily Download and Save all your medical Reports</p>
+        <a href="p_reports" class="btn btn-primary d-flex justify-content-center">Download Now!</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-md-6 col-lg-3 ">
+    <div class="card">
+    	<img src="{% static 'images/buy_med.png' %}" class="img-card img-fluid" alt="...">
+      <div class="card-body">
+        <h5 class="card-title text-center">Order Medicine!</h5>
+        <p class="card-text text-center">Have Your essential Medicines delivered to your doorstep</p>
+        <a href="m_order" class="btn btn-primary d-flex justify-content-center">Order Now!</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-md-6 col-lg-3">
+    <div class="card">
+    	<img src="{% static 'images/BookAp.png' %}" class="img-card img-fluid" alt="...">
+      <div class="card-body">
+        <h5 class="card-title text-center">Book Appointments</h5>
+        <p class="card-text text-center">Easily Book Appointments with Leading Doctors</p>
+        <a href="book_appointment" class="btn btn-primary d-flex justify-content-center">Book Now!</a>
+      </div>
+    </div>
+  </div>
+  	<div class="col-12 col-md-6 col-lg-3">
+    <div class="card">
+      <div class="card-body">
+      	<img src="{% static 'images/det.jpg' %}"class="img-card img-fluid" alt="...">
+        <h5 class="card-title text-center">View details</h5>
+        <p class="card-text text-center">View All Your Personal And Medical details Here </p>
+        <a href="#" class="btn btn-primary d-flex justify-content-center">View Now!</a>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

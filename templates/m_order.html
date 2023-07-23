@@ -1,0 +1,140 @@
+{%load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<title>Order Medication</title>
+	<style type="text/css">
+		@media (max-width: 576px) 
+		{
+			.carousel-item
+			{
+				height:150px ;
+			}
+		}
+		@media (min-width: 768px) 
+		{
+			.carousel-item
+			{
+				height:400px ;
+			}
+		}
+		.td{
+			text-align: center;
+		}
+		/*.card{
+			background-color: black;
+			color: white;
+		}*/
+	</style>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	  <div class="container-fluid">
+	    <a class="navbar-brand" href="#">iMediCare</a>
+	    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	      <span class="navbar-toggler-icon"></span>
+	    </button>
+	    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	      <ul class="navbar-nav d-flex ms-auto mb-2 mb-lg-1">
+	        <li class="nav-item">
+	          <a class="nav-link active" aria-current="page" href="p_details">Update Details</a>
+	        </li>
+	        <li class="nav-item">
+	          <a class="nav-link active" aria-current="page" href="#">History</a>
+	        </li>
+	        <li class="nav-item">
+	          <button type="button" class="btn btn-outline-danger">LogOut</button>
+	        </li>
+	      </ul>
+	    </div>
+	  </div>
+	</nav>
+
+	<div class="container">
+		<hr>
+		<div class="display-2 d-flex justify-content-center">Order Medication</div>
+		<hr>
+				<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  		<div class="carousel-inner">
+    		<!-- <div class="carousel-item">
+      		<img src="images/banner4.jpg" class="d-block w-100 first" alt="...">
+      		
+    		</div> -->
+    		<div class="carousel-item active">
+      		<img src="{% static 'images/buy_meds.jpg' %}" class="d-block w-100" alt="...">
+      		<!-- <div class="carousel-caption d-none d-md-block text-danger">
+        			<h1>Health Care Made Easy</h1>
+        				<p>One Stop Shop for your health Needs</p>
+      			</div> -->
+    		</div>
+    		<!-- <div class="carousel-item">
+      		<img src="images/banner7.jpg" class="d-block w-100" alt="...">
+      		<div class="carousel-caption d-none d-md-block text-danger">
+        			<h1>Order Medicine!</h1>
+        				<p>Order all your prescribed Medicine with a click</p>
+      			</div> -->
+    		</div>
+  		</div>
+  		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    		<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    		<span class="visually-hidden">Previous</span>
+  		</button>
+  		<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    		<span class="carousel-control-next-icon" aria-hidden="true"></span>
+    		<span class="visually-hidden">Next</span>
+  		</button>
+  		<hr>
+		</div>
+		<div class="container">
+			<h3 class="d-flex justify-content-center">Choose Your Medication</h3>
+			<div class="col-10 mx-auto">
+				<form method="POST" action="m_order">{% csrf_token %}
+			<table class="table table-striped">
+					<thead class="table-dark">
+					  <tr>
+						<th scope="col">#</th>
+						<th scope="col">Medication</th>
+						<th scope="col">Price(Rs.)</th>
+						<th scope="col">Add To Cart</th>
+						<th scope="col">Quantity</th>
+					  </tr>
+				</thead>
+			
+			{%for id,name,price in auxi %}
+				
+					
+		  			<tbody>
+		    			<tr>
+		      			<td ><input type="text" value={{id}} class="col-2" name="id"></td>
+		      			<td>{{name}}</td>
+		      			<td>{{price}}</td>
+		      			<td>
+		      				<div class="form-check ms-3">
+		  							<input class="form-check-input" type="checkbox" name="checkbox" value={{id}} id="flexCheckDefault">
+									</div>
+		      			</td>
+		      			<td>
+		      				<input type="number" value="0" min="0" max="50" step="1">
+		      			</td>
+		    			</tr>
+		    			
+		    			
+		  			</tbody>
+					  {% endfor %}	
+			</table>		
+				
+		
+			<div class="d-grid gap-2 col-6 mx-auto mb-4">
+				<button class="btn btn-success" type="submit">Buy Now!</button>
+			  </div>
+			
+		</form>
+	
+			</div>
+		</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
